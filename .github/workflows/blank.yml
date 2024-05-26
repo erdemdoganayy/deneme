@@ -9,9 +9,6 @@ jobs:
   create_value:
     runs-on: self-hosted
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Create a value file
         run: echo "example_value" > my_value.txt
 
