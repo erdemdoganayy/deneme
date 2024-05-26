@@ -1,0 +1,22 @@
+name: First Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_value:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create a value file
+        run: echo "example_value" > my_value.txt
+
+      - name: Upload the artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-value-file
+          path: my_value.txt
